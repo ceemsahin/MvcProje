@@ -11,6 +11,7 @@ namespace DataAccessLayer.Abstract
     {
         void Insert(T p);   //(Ekle)
         List<T> List();     //(Oku-Listele)
+        T Get(Expression<Func<T,bool>> filter);
         void Delete(T p);   //(Sil)
         void Update(T p);   //(Güncelle)
 
