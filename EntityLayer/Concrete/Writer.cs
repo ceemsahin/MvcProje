@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace EntityLayer.Concrete
 {
@@ -15,7 +16,7 @@ namespace EntityLayer.Concrete
         public string WriterName { get; set; }
         [StringLength(50)]
         public string WriterSurName { get; set; }
-        [StringLength(100)]
+        [StringLength(250)]
         public string WriterImage { get; set; }
         [StringLength(100)]
         public string WriterAbout { get; set; }
@@ -25,6 +26,8 @@ namespace EntityLayer.Concrete
         public string WriterPassword { get; set; }
         [StringLength(50)]
         public string WriterTitle { get; set; }
+
+        public bool WriterStatus { get; set; }
 
         //İlişki Kuralım -Content ile-
         public ICollection<Content> Contents { get; set; }
