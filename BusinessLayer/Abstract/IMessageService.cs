@@ -13,7 +13,6 @@ namespace BusinessLayer.Abstract
 
         List<Message> GetListInbox();
         List<Message> GetListSendbox();
-
         void MessageAdd(Message message);
         void MessageDelete(Message message);
         void MessageUpdate(Message message);

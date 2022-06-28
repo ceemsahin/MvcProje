@@ -11,13 +11,12 @@ using System.Web.Mvc;
 
 namespace MvcProjeKampi.Controllers
 {
-    public class MessageController : Controller
+    public class WriterPanelMessageController : Controller
     {
-        // GET: Message
         MessageManager mm = new MessageManager(new EfMessageDal());
         MessageValidator messagevalidator = new MessageValidator();
 
-         [Authorize]
+
         public ActionResult Inbox()
         {
 
@@ -27,11 +26,10 @@ namespace MvcProjeKampi.Controllers
 
         }
 
-
         public ActionResult SendBox()
         {
             var messagelist = mm.GetListSendbox();
-         return View(messagelist);
+            return View(messagelist);
         }
         public ActionResult GetInboxMessageDetails(int id)
         {
@@ -44,8 +42,10 @@ namespace MvcProjeKampi.Controllers
             return View(values);
         }
 
-
-        [HttpGet]
+        public PartialViewResult MessageListMenu()
+        {
+            return PartialView();
+        }
         public ActionResult NewMessage()
         {
             return View();
@@ -73,5 +73,7 @@ namespace MvcProjeKampi.Controllers
             return View();
 
         }
+
+
     }
 }
